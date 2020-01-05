@@ -1,0 +1,4 @@
+include ':app', ':naruto-core'
+
+//引用外部文件夹Module ../../xxx/module
+project(':naruto-core').projectDir = new File(settingsDir, '../naruto-core')
