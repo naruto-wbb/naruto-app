@@ -12,11 +12,25 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    //配置keystore签名
+//    signingConfigs {
+//        release {
+//            storeFile file("")
+//            storePassword ""
+//            keyAlias ""
+//            keyPassword ""
+//        }
+//    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+//        debug {
+//            signingConfig signingConfigs.release
+//        }
     }
 
     compileOptions {
@@ -30,8 +44,11 @@ dependencies {
     implementation project(path: ':naruto-core')
 
     implementation rootProject.ext.constraintlayout
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
 
     testImplementation rootProject.ext.junit
     androidTestImplementation rootProject.ext.junit_ext
     androidTestImplementation rootProject.ext.espresso_core
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
 }
