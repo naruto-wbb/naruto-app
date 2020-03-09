@@ -2,14 +2,14 @@ package com.naruto.road.model
 
 import com.naruto.core.base.app
 import com.naruto.core.net.BaseHttpClient
-import com.naruto.road.R
+import com.naruto.road.Config
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import java.io.File
 
 object ApiService : BaseHttpClient() {
 
-    val api by lazy { createService(app.getString(R.string.base_url), Api::class.java) }
+    val api by lazy { createService(Config.BASE_URL, Api::class.java) }
 
     override fun handleOkHttp(builder: OkHttpClient.Builder) {
         val httpCacheDirectory = File(app.cacheDir, "naruto")

@@ -11,3 +11,8 @@
 /gradlew.bat
 /.idea/
 /gradle/
+/gradle.properties
+app/libs/
+app/src/androidTest/java/com/sida/
+app/src/main/assets/
+app/src/test/java/com/sida/

@@ -5,7 +5,7 @@ import com.naruto.core.base.app
 object Config {
 
     //api url
-    val baseUrl = app.resources.getString(R.string.base_url)
+    const val BASE_URL = BuildConfig.BASE_URL
 
     //SharedPreferences相关
     const val DEBUG_WEB_VIEW_CACHE = "DEBUG_WEB_VIEW_CACHE"

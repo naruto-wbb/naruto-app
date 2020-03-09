@@ -18,6 +18,7 @@ import com.naruto.road.util.SensorManagerHelper
 import com.naruto.road.util.UserHelper
 import kotlinx.android.synthetic.main.activity_events.*
 import kotlinx.android.synthetic.main.view_title_bar.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.jetbrains.annotations.Nullable
 
 /**
@@ -228,17 +229,17 @@ class EventsActivity : BaseActivity() {
         }
     }
 
+    @ExperimentalCoroutinesApi
     override fun onBackPressed() {
-        mWebView.evaluateJavascript("javascript:onBackPressed()", null)
         unregisterOnShakeListener()
         if (mWebView != null) {
             if (mWebView.canGoBack()) {
                 mWebView.goBack()
             } else {
                 super.onBackPressed()
-                if (mWebView.isNotEmpty()) {
-                    mWebView.destroy()
-                }
+
+                mWebView.removeAllViews()
+                mWebView.destroy()
             }
         } else {
             super.onBackPressed()

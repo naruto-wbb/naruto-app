@@ -4,6 +4,7 @@ import android.content.Context
 import com.naruto.core.base.BaseActivity
 import com.naruto.core.utils.LogUtil
 import com.naruto.road.model.HomeRepository
+import com.naruto.road.view.FixLinearLayoutManager
 import com.scwang.smartrefresh.header.MaterialHeader
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.scwang.smartrefresh.layout.api.RefreshLayout

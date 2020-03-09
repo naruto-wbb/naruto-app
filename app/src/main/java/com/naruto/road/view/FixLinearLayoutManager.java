@@ -1,4 +1,4 @@
-package com.naruto.road;
+package com.naruto.road.view;
 
 import android.content.Context;
 
